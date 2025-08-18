@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{5D6AF8D4-EB34-4B6C-A6CC-457D36DC4672}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "catalog", "catalog", "{993E429D-44DB-4E2E-9DFD-842C7516C105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyCloneMicroservice.Catalog.Api", "UdemyCloneMicroservice.Catalog.Api\UdemyCloneMicroservice.Catalog.Api.csproj", "{708E6C6F-7B21-4169-8CBD-CEB61FEDBDE6}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{D732729C-B972-45FA-BA18-E7694934637E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyCloneMicroservice.Shared", "shared\UdemyCloneMicroservice.Shared\UdemyCloneMicroservice.Shared.csproj", "{24A7DE7C-774A-40D8-BF65-D6ED3C760A06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{708E6C6F-7B21-4169-8CBD-CEB61FEDBDE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{708E6C6F-7B21-4169-8CBD-CEB61FEDBDE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{708E6C6F-7B21-4169-8CBD-CEB61FEDBDE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{708E6C6F-7B21-4169-8CBD-CEB61FEDBDE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24A7DE7C-774A-40D8-BF65-D6ED3C760A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A7DE7C-774A-40D8-BF65-D6ED3C760A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A7DE7C-774A-40D8-BF65-D6ED3C760A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A7DE7C-774A-40D8-BF65-D6ED3C760A06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D6AF8D4-EB34-4B6C-A6CC-457D36DC4672} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{993E429D-44DB-4E2E-9DFD-842C7516C105} = {5D6AF8D4-EB34-4B6C-A6CC-457D36DC4672}
+		{708E6C6F-7B21-4169-8CBD-CEB61FEDBDE6} = {993E429D-44DB-4E2E-9DFD-842C7516C105}
+		{D732729C-B972-45FA-BA18-E7694934637E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{24A7DE7C-774A-40D8-BF65-D6ED3C760A06} = {D732729C-B972-45FA-BA18-E7694934637E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F72C24F3-1E4A-49AD-AB42-A5D6665737FC}
+	EndGlobalSection
+EndGlobal
