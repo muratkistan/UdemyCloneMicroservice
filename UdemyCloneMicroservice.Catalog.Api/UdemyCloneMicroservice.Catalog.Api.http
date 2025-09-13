@@ -1,6 +1,17 @@
-@UdemyCloneMicroservice.Catalog.Api_HostAddress = http://localhost:5194
+@baseAddress = http://localhost:5194
+@categoryId = 08ddde5a-8dab-f29e-b4a9-fcfe18640000
 
-GET {{UdemyCloneMicroservice.Catalog.Api_HostAddress}}/weatherforecast/
+GET {{baseAddress}}/api/categories
 Accept: application/json
 
+###
+Post {{baseAddress}}/api/categories
+Accept: application/json
+Content-Type: application/json
+{
+  "name": "Category 1"
+}
+###
+GET {{baseAddress}}/api/categories/{{categoryId}}
+Accept: application/json
 ###

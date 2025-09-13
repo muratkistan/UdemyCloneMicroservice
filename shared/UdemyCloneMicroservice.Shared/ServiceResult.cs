@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using Refit;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,10 @@ using ProblemDetails = Microsoft.AspNetCore.Mvc.ProblemDetails;
 
 namespace UdemyCloneMicroservice.Shared
 {
+    public interface IRequestByServiceResult<T> : IRequest<ServiceResult<T>>;
+
+    public interface IRequestByServiceResult : IRequest<ServiceResult>;
+
     public class ServiceResult
     {
         [JsonIgnore]
