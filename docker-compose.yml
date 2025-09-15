@@ -18,6 +18,26 @@ services:
     environment:
       ME_CONFIG_MONGODB_URL: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongo.db.catalog:27017/
       ME_CONFIG_BASICAUTH: false
+  mongo.db.discount:
+    restart: always
+    image: mongo:8.0-rc
+    container_name: mongo.db.discount.container
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - "27034:27017"
+    volumes:
+      - mongo.db.discount.volume:/data/db
+  mongo.db.discount.ui:
+    image: mongo-express:1.0.2-20-alpine3.19
+    container_name: mongo.db.discount.ui.container
+    ports:
+      - 27036:8081
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongo.db.discount:27017/
+      ME_CONFIG_BASICAUTH: false
 volumes:
    mongo.db.catalog.volume:
+   mongo.db.discount.volume:
 

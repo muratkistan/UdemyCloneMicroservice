@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{D73272
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyCloneMicroservice.Shared", "shared\UdemyCloneMicroservice.Shared\UdemyCloneMicroservice.Shared.csproj", "{24A7DE7C-774A-40D8-BF65-D6ED3C760A06}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discount", "discount", "{74F06DD1-DC9F-467B-A2B2-8B4C35C19864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyCloneMicroservice.Discount.Api", "UdemyCloneMicroservice.Discount.Api\UdemyCloneMicroservice.Discount.Api.csproj", "{71CBE23F-BCA9-4EA8-BCE6-2325ADAFA4E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{24A7DE7C-774A-40D8-BF65-D6ED3C760A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24A7DE7C-774A-40D8-BF65-D6ED3C760A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24A7DE7C-774A-40D8-BF65-D6ED3C760A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71CBE23F-BCA9-4EA8-BCE6-2325ADAFA4E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71CBE23F-BCA9-4EA8-BCE6-2325ADAFA4E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71CBE23F-BCA9-4EA8-BCE6-2325ADAFA4E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71CBE23F-BCA9-4EA8-BCE6-2325ADAFA4E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +53,8 @@ Global
 		{708E6C6F-7B21-4169-8CBD-CEB61FEDBDE6} = {993E429D-44DB-4E2E-9DFD-842C7516C105}
 		{D732729C-B972-45FA-BA18-E7694934637E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{24A7DE7C-774A-40D8-BF65-D6ED3C760A06} = {D732729C-B972-45FA-BA18-E7694934637E}
+		{74F06DD1-DC9F-467B-A2B2-8B4C35C19864} = {5D6AF8D4-EB34-4B6C-A6CC-457D36DC4672}
+		{71CBE23F-BCA9-4EA8-BCE6-2325ADAFA4E0} = {74F06DD1-DC9F-467B-A2B2-8B4C35C19864}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F72C24F3-1E4A-49AD-AB42-A5D6665737FC}
