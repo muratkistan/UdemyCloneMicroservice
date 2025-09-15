@@ -1,0 +1,19 @@
+@baseAddress = http://localhost:5062
+
+###
+POST {{baseAddress}}/api/v1/files
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+------WebKitFormBoundary
+Content-Disposition: form-data; name="file"; filename="hello-world.txt"
+Content-Type: text/plain
+
+Hello World
+------WebKitFormBoundary--
+###
+DELETE {{baseAddress}}/api/v1/files
+Content-Type: application/json
+{
+  "fileName": "83fb0188-a237-497e-b32e-a2bfb043a015.txt"
+}
+###
