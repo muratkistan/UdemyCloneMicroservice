@@ -161,9 +161,9 @@ namespace UdemyCloneMicroservice.Shared
             };
         }
 
-        public new static ServiceResult Error(string title, string description, HttpStatusCode status)
+        public new static ServiceResult<T> Error(string title, string description, HttpStatusCode status)
         {
-            return new ServiceResult
+            return new ServiceResult<T>
             {
                 Status = status,
                 Fail = new ProblemDetails()

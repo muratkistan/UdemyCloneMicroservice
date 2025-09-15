@@ -18,8 +18,4 @@
     <ProjectReference Include="..\shared\UdemyCloneMicroservice.Shared\UdemyCloneMicroservice.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Courses\Create\" />
-  </ItemGroup>
-
 </Project>

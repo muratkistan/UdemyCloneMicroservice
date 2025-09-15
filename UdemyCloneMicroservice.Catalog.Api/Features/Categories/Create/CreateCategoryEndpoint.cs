@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Asp.Versioning.Builder;
+using MediatR;
 using UdemyCloneMicroservice.Shared.Extensions;
 using UdemyCloneMicroservice.Shared.Filters;
 
@@ -11,6 +12,8 @@ namespace UdemyCloneMicroservice.Catalog.Api.Features.Categories.Create
             group.MapPost("/",
                    async (CreateCategoryCommand command, IMediator mediator) =>
                        (await mediator.Send(command)).ToGenericResult())
+                .WithName("CreateCategory")
+                .MapToApiVersion(1, 0)
                .AddEndpointFilter<ValidationFilter<CreateCategoryCommand>>();
 
             return group;
