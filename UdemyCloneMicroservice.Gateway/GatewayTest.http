@@ -1,9 +1,10 @@
-@baseAddress = http://localhost:5006
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@baseAddress = http://localhost:5000
 
 
 
 ### Create a Payment
-POST {{baseAddress}}/api/v1/payments
+POST {{baseAddress}}/v1/payments
 Content-Type: application/json
 Accept: application/json
 {
@@ -15,6 +16,6 @@ Accept: application/json
   "Amount": 150.75
 }
 ### Get All Payments
-GET {{baseAddress}}/api/v1/payments
+GET {{baseAddress}}/v1/payments
 Accept: application/json
 ###

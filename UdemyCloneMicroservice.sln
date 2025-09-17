@@ -49,6 +49,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyCloneMicroservice.Orde
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyCloneMicroservice.Order.Persistence", "UdemyCloneMicroservice.Order.Persistence\UdemyCloneMicroservice.Order.Persistence.csproj", "{00C2EF66-A33D-4927-A6F3-6A9A01490327}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateway", "gateway", "{76F08B4D-1E12-4879-BC29-4F3F881B6D8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyCloneMicroservice.Gateway", "UdemyCloneMicroservice.Gateway\UdemyCloneMicroservice.Gateway.csproj", "{57BEB8DF-0307-449D-BD34-EE0B9BD446D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,10 @@ Global
 		{00C2EF66-A33D-4927-A6F3-6A9A01490327}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00C2EF66-A33D-4927-A6F3-6A9A01490327}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00C2EF66-A33D-4927-A6F3-6A9A01490327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57BEB8DF-0307-449D-BD34-EE0B9BD446D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57BEB8DF-0307-449D-BD34-EE0B9BD446D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57BEB8DF-0307-449D-BD34-EE0B9BD446D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57BEB8DF-0307-449D-BD34-EE0B9BD446D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +133,8 @@ Global
 		{6549EA3B-A2C2-469E-B054-6057F3C15473} = {233266C9-B7DB-413D-B7BA-76A647D9070D}
 		{50193B96-A409-4ACB-812D-D72AA6F4C899} = {233266C9-B7DB-413D-B7BA-76A647D9070D}
 		{00C2EF66-A33D-4927-A6F3-6A9A01490327} = {93A043A4-E5A4-40A8-91AA-D0D765F28543}
+		{76F08B4D-1E12-4879-BC29-4F3F881B6D8D} = {5D6AF8D4-EB34-4B6C-A6CC-457D36DC4672}
+		{57BEB8DF-0307-449D-BD34-EE0B9BD446D4} = {76F08B4D-1E12-4879-BC29-4F3F881B6D8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F72C24F3-1E4A-49AD-AB42-A5D6665737FC}
