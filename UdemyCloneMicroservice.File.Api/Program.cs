@@ -1,4 +1,5 @@
 using Microsoft.Extensions.FileProviders;
+using UdemyCloneMicroservice.Bus;
 using UdemyCloneMicroservice.File.Api;
 using UdemyCloneMicroservice.File.Api.Features;
 using UdemyCloneMicroservice.Shared.Extensions;
@@ -13,6 +14,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
 
 builder.Services.AddCommonServiceExt(typeof(FileAssembly));
+//builder.Services.AddCommonMasstransitExt(builder.Configuration);
+builder.Services.AddMasstransitExt(builder.Configuration);
+
 builder.Services.AddVersioningExt();
 
 builder.Services.AddAuthenticationAndAuthorizationExt(builder.Configuration);

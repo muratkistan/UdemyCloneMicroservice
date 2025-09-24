@@ -103,11 +103,25 @@ services:
       PGADMIN_DEFAULT_PASSWORD: strong-password
     volumes:
       - posrgres.db.keycloak.ui.volume:/var/lib/pgadmin
+  rabbitmq:
+    restart: always
+    image: rabbitmq:3.13.7-management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672  
+      - 15672:15672 
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
 volumes:
    mongo.db.catalog.volume:
    mongo.db.discount.volume:
    redis.db.basket.volume:
    posrgres.db.keycloak.volume:
    posrgres.db.keycloak.ui.volume:
+   rabbitmq_data:
 
 

@@ -1,3 +1,4 @@
+using UdemyCloneMicroservice.Bus;
 using UdemyCloneMicroservice.Discount.Api;
 using UdemyCloneMicroservice.Discount.Api.Features.Discounts;
 using UdemyCloneMicroservice.Discount.Api.Options;
@@ -14,6 +15,8 @@ builder.Services.AddOptionsExt();
 builder.Services.AddDatabaseServiceExt();
 
 builder.Services.AddCommonServiceExt(typeof(DiscountAssembly));
+builder.Services.AddMasstransitExt(builder.Configuration);
+
 builder.Services.AddVersioningExt();
 
 builder.Services.AddAuthenticationAndAuthorizationExt(builder.Configuration);

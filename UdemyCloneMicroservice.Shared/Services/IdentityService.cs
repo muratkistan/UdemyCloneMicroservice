@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace UdemyCloneMicroservice.Shared.Services
 {
-    internal class IdentityService(IHttpContextAccessor httpContextAccessor) : IIdentityService
+    public class IdentityService(IHttpContextAccessor httpContextAccessor) : IIdentityService
     {
         public Guid UserId
         {

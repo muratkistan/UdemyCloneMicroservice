@@ -10,7 +10,7 @@ namespace UdemyCloneMicroservice.Payment.Api.Feature.Payments
         {
             app.MapGroup("api/v{version:apiVersion}/payments").WithTags("payments").WithApiVersionSet(apiVersionSet)
                 .CreatePaymentGroupItemEndpoint()
-            .GetAllPaymentsByUserIdGroupItemEndpoint();
+            .GetAllPaymentsByUserIdGroupItemEndpoint().RequireAuthorization("Password");
         }
     }
 }

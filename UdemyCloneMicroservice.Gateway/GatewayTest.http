@@ -1,13 +1,58 @@
 # For more info on HTTP files go to https://aka.ms/vs/httpfile
 @baseAddress = http://localhost:5000
-@token= eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSSXA3TWJaOEZITnlaYjZiT2pnckpDeXNaME9KdWY2ODFPZUpzSG0xMHVFIn0.eyJleHAiOjE3NTg2MzI5NzYsImlhdCI6MTc1ODYzMjY3NiwianRpIjoiNDE1YzNkMDktMzExNy00Y2VjLWE1MGItNWZiM2M5Y2EwYWRkIiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMS4xMDQ6ODA4MC9yZWFsbXMvdWRlbXlUZW5hbnQiLCJhdWQiOlsiZGlzY291bnQuYXBpIiwiZmlsZS5hcGkiLCJwYXltZW50LmFwaSIsImdhdGV3YXkuYXBpIiwib3JkZXIuYXBpIiwiY2F0YWxvZy5hcGkiLCJiYXNrZXQuYXBpIiwiYWNjb3VudCJdLCJzdWIiOiI2MDEwMGJkOC1lYTkyLTQ0YjEtOWI3ZC1lNjljYjYzMGIxMjIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3ZWIiLCJzaWQiOiI2NTkxZDI2YS1iYzVlLTQwYjgtYjVlYy0xNzQyZmYyNWQ2MDIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUgcGhvbmUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInJvbGVzIjpbImluc3RydWN0b3IiLCJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtdWRlbXl0ZW5hbnQiLCJ1bWFfYXV0aG9yaXphdGlvbiJdLCJuYW1lIjoiTXVyYXQgQWxpIEtJxZ5UQU4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJtdXJhdGtpc3RhbiIsImdpdmVuX25hbWUiOiJNdXJhdCBBbGkiLCJmYW1pbHlfbmFtZSI6IktJxZ5UQU4iLCJlbWFpbCI6Im11cmF0a2lzdGFuQGdtYWlsLmNvbSJ9.wKRtGPOvK7S4XSe3-1Fa0tkpAR8KxT4gGVtSPW2QbQ0AwYYGjTPNbgVc8cjgouio9a1ZzsItNXdPFqW4UI8udx16cuOP4-Jw9zAzoNBcdc_ZPy9woBUtcYoabRzWceoBbCReKzy9metUqAufhxD0MW1HZFdvlVTX0L41cqZD-39tlpxIPKNWEKtm81iLUYpdnnZZoNyUE1hczF0s-21LWvMJYneLHyo4mTm7G5sMPlq3vTqmfT1tGfCl375L-VPKGpTHJCqgtOj0k8JBgC-_1dmO7aZjL2X4jAjJIFGNPkUpiDyEq71CUYQ3b0DtOK_2q1elSiUfHSEMkk5ohy5t2Q
+@token= eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSSXA3TWJaOEZITnlaYjZiT2pnckpDeXNaME9KdWY2ODFPZUpzSG0xMHVFIn0.eyJleHAiOjE3NTg3MTk0OTUsImlhdCI6MTc1ODcxOTE5NSwianRpIjoiNmVkNzE3NGYtOWVjNS00MzI5LTkwNjUtMDJkZDkxZWQxMzRlIiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMS4xMDQ6ODA4MC9yZWFsbXMvdWRlbXlUZW5hbnQiLCJhdWQiOlsiZGlzY291bnQuYXBpIiwiZmlsZS5hcGkiLCJwYXltZW50LmFwaSIsImdhdGV3YXkuYXBpIiwib3JkZXIuYXBpIiwiY2F0YWxvZy5hcGkiLCJiYXNrZXQuYXBpIiwiYWNjb3VudCJdLCJzdWIiOiI2MDEwMGJkOC1lYTkyLTQ0YjEtOWI3ZC1lNjljYjYzMGIxMjIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3ZWIiLCJzaWQiOiI5MDUzZGZmMi05NTIwLTQxY2EtODJlOS1iMjQwOGNiZGRjMTQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUgcGhvbmUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInJvbGVzIjpbImluc3RydWN0b3IiLCJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtdWRlbXl0ZW5hbnQiLCJ1bWFfYXV0aG9yaXphdGlvbiJdLCJuYW1lIjoiTXVyYXQgQWxpIEtJxZ5UQU4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJtdXJhdGtpc3RhbiIsImdpdmVuX25hbWUiOiJNdXJhdCBBbGkiLCJmYW1pbHlfbmFtZSI6IktJxZ5UQU4iLCJlbWFpbCI6Im11cmF0a2lzdGFuQGdtYWlsLmNvbSJ9.n4SHiY3cNFeVwxySvUwXqJZxXwTs4PaGtpCXUV5Yr5z_Y2KPiAdVKccfjnaPIsy2xu8SaJQ7OoJUUBT5TfPxRI_ITlBF0u2G3ZLEN1dxlA3RSQXJrboCCBoOYW9K8b1ZFV1tJJESh8kzx2oVawPXJCD0fYb3a2N7wlftnVUckd-yWKEnik4597EiPEwhSiGsFCDi6A07qcKXOifxze3tTIIUxXIXtEm45Qv3kNkpiknxmVJ0uNoNKJDXWdDcfeCtWYqaw090jiYmqEImH7I4UivPqSRHYtCYMn47imfD2KPS0jOCzwJvkRQwFSmVv094-Eic3JapDXzQtmanGjZMYA
+@courseId=08ddfb4e-33ec-eb3c-fcfe-186438470000
+
+### Basket Service - Get User Basket
+GET {{baseAddress}}/v1/baskets/user
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### Basket Service - Add Item to Basket
+POST {{baseAddress}}/v1/baskets/item
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+{
+  "courseId":"{{courseId}}",
+  "courseName": "Python",
+  "coursePrice": 200
+}
 
 
+### Order Service - Create Order
+POST {{baseAddress}}/v1/orders
+Content-Type: application/json
+Authorization: Bearer {{token}}
+Accept: application/json
+{
+  "Address": {
+    "Line": "123 Main St",
+    "Province": "Ontario",
+    "District": "Toronto",
+    "ZipCode": "12345",
+    "Street": "Main St"
+  },
+  "Payment": {
+    "CardNumber": "4111111111111111",
+    "CardHolderName": "John Doe",
+    "Expiration": "12/25",
+    "Cvc": "123",
+    "Amount": 150.75
+  },
+  "Items": [
+    {
+      "ProductId": "{{courseId}}",
+      "ProductName": "Python",
+      "UnitPrice": 200
+    }
+  ]
+}
 
 ### Create a Payment
 POST {{baseAddress}}/v1/payments
 Content-Type: application/json
-Accept: application/json
+Accept: application/json,
 Authorization: Bearer {{token}}
 {
   "OrderCode": "6657c883-2e9b-43e4-a421-45f9ef25b415",
@@ -17,6 +62,7 @@ Authorization: Bearer {{token}}
   "CardSecurityNumber": "123",
   "Amount": 150.75
 }
+
 ### Get All Payments
 GET {{baseAddress}}/v1/payments
 Accept: application/json

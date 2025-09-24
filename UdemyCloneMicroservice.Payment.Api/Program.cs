@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using UdemyCloneMicroservice.Bus;
 using UdemyCloneMicroservice.Payment.Api;
 using UdemyCloneMicroservice.Payment.Api.Feature.Payments;
 using UdemyCloneMicroservice.Payment.Api.Repositories;
@@ -12,7 +13,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddVersioningExt();
 builder.Services.AddCommonServiceExt(typeof(PaymentAssembly));
-builder.Services.AddScoped<IIdentityService, IdentityServiceFake>();
+builder.Services.AddCommonMasstransitExt(builder.Configuration);
+
+builder.Services.AddScoped<IIdentityService, IdentityService>();
 builder.Services.AddDbContext<AppDbContext>(options => { options.UseInMemoryDatabase("payment-db"); });
 
 builder.Services.AddAuthenticationAndAuthorizationExt(builder.Configuration);

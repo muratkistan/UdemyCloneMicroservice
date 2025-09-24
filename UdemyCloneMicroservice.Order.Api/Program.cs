@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using UdemyCloneMicroservice.Bus;
 using UdemyCloneMicroservice.Order.Api;
 using UdemyCloneMicroservice.Order.Api.Endpoints.Orders;
 using UdemyCloneMicroservice.Order.Application;
@@ -22,6 +23,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCommonServiceExt(typeof(OrderApplicationAssembly));
 //builder.Services.AddMediatR(x => x.RegisterServicesFromAssemblyContaining(typeof(OrderApiAssembly)));
+builder.Services.AddCommonMasstransitExt(builder.Configuration);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

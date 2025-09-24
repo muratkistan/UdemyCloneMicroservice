@@ -2,6 +2,7 @@ using System.Security.Principal;
 using UdemyCloneMicroservice.Basket.Api;
 using UdemyCloneMicroservice.Basket.Api.Features;
 using UdemyCloneMicroservice.Basket.Api.Features.Baskets;
+using UdemyCloneMicroservice.Bus;
 using UdemyCloneMicroservice.Shared.Extensions;
 using UdemyCloneMicroservice.Shared.Services;
 
@@ -15,7 +16,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCommonServiceExt(typeof(BasketAssembly));
 builder.Services.AddScoped<BasketService>();
 
-builder.Services.AddScoped<IIdentityService, IdentityServiceFake>();
+builder.Services.AddMasstransitExt(builder.Configuration);
+
+builder.Services.AddScoped<IIdentityService, IdentityService>();
 
 builder.Services.AddStackExchangeRedisCache(options =>
 {

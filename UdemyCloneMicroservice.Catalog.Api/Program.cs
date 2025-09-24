@@ -1,4 +1,5 @@
 using MongoDB.Driver;
+using UdemyCloneMicroservice.Bus;
 using UdemyCloneMicroservice.Catalog.Api;
 using UdemyCloneMicroservice.Catalog.Api.Features.Categories;
 using UdemyCloneMicroservice.Catalog.Api.Features.Courses;
@@ -14,6 +15,9 @@ builder.Services.AddOpenApi();
 builder.Services.AddOptionsExt();
 builder.Services.AddDatabaseServiceExt();
 builder.Services.AddCommonServiceExt(typeof(CatalogAssembly));
+//builder.Services.AddCommonMasstransitExt(builder.Configuration);
+builder.Services.AddMasstransitExt(builder.Configuration);
+
 builder.Services.AddVersioningExt();
 
 builder.Services.AddAuthenticationAndAuthorizationExt(builder.Configuration);

@@ -1,5 +1,4 @@
-﻿using MassTransit;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -42,7 +41,7 @@ namespace UdemyCloneMicroservice.Order.Domain.Entities
         {
             return new Order
             {
-                Id = NewId.NextGuid(),
+                Id = Guid.CreateVersion7(),
                 Code = GenerateCode(),
                 BuyerId = buyerId,
                 Created = DateTime.Now,
@@ -57,7 +56,7 @@ namespace UdemyCloneMicroservice.Order.Domain.Entities
         {
             return new Order
             {
-                Id = NewId.NextGuid(),
+                Id = Guid.CreateVersion7(),
                 Code = GenerateCode(),
                 BuyerId = buyerId,
                 Created = DateTime.Now,
