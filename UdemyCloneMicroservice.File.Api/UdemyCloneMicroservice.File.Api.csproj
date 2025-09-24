@@ -12,11 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\shared\UdemyCloneMicroservice.Shared\UdemyCloneMicroservice.Shared.csproj" />
+    <Folder Include="wwwroot\files\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\files\" />
+    <ProjectReference Include="..\UdemyCloneMicroservice.Shared\UdemyCloneMicroservice.Shared.csproj" />
   </ItemGroup>
 
 </Project>

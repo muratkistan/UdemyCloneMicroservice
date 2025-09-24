@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\shared\UdemyCloneMicroservice.Shared\UdemyCloneMicroservice.Shared.csproj" />
+    <ProjectReference Include="..\UdemyCloneMicroservice.Shared\UdemyCloneMicroservice.Shared.csproj" />
   </ItemGroup>
 
 </Project>
