@@ -15,6 +15,8 @@ builder.Services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combi
 builder.Services.AddCommonServiceExt(typeof(FileAssembly));
 builder.Services.AddVersioningExt();
 
+builder.Services.AddAuthenticationAndAuthorizationExt(builder.Configuration);
+
 var app = builder.Build();
 app.AddFileGroupEndpointExt(app.AddVersionSetExt());
 
@@ -27,5 +29,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.MapOpenApi();
 }
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();

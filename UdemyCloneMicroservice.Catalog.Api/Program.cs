@@ -16,6 +16,8 @@ builder.Services.AddDatabaseServiceExt();
 builder.Services.AddCommonServiceExt(typeof(CatalogAssembly));
 builder.Services.AddVersioningExt();
 
+builder.Services.AddAuthenticationAndAuthorizationExt(builder.Configuration);
+
 var app = builder.Build();
 
 app.AddSeedDataExt().ContinueWith(x =>
@@ -35,5 +37,8 @@ if (app.Environment.IsDevelopment())
         options.SwaggerEndpoint("/openapi/v1.json", "Catalog API V1");
     });
 }
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();

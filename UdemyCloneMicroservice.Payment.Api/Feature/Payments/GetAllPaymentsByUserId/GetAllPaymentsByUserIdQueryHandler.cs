@@ -13,7 +13,7 @@ namespace UdemyCloneMicroservice.Payment.Api.Feature.Payments.GetAllPaymentsByUs
             GetAllPaymentsByUserIdQuery request,
             CancellationToken cancellationToken)
         {
-            var userId = identityService.GetUserId;
+            var userId = identityService.UserId;
 
             var payments = await context.Payments
                 .Where(x => x.UserId == userId)

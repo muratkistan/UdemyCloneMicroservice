@@ -20,7 +20,7 @@ namespace UdemyCloneMicroservice.Shared.Extensions
 
             services.AddFluentValidationAutoValidation();
             services.AddValidatorsFromAssemblyContaining(assembly);
-            services.AddScoped<IIdentityService, IdentityServiceFake>();
+            services.AddScoped<IIdentityService, IdentityService>();
 
             services.AddAutoMapper(assembly);
             return services;

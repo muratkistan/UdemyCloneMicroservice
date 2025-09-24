@@ -28,7 +28,7 @@ namespace UdemyCloneMicroservice.Order.Application.Features.Orders.CreateOrder
                 Line = request.Address.Line
             };
 
-            var order = Domain.Entities.Order.CreateUnPaidOrder(identityService.GetUserId, request.DiscountRate, newAddress.Id);
+            var order = Domain.Entities.Order.CreateUnPaidOrder(identityService.UserId, request.DiscountRate, newAddress.Id);
             foreach (var orderItem in request.Items) order.AddOrderItem(orderItem.ProductId, orderItem.ProductName, orderItem.UnitPrice);
 
             order.Address = newAddress;

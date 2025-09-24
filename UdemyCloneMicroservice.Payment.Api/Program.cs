@@ -15,6 +15,8 @@ builder.Services.AddCommonServiceExt(typeof(PaymentAssembly));
 builder.Services.AddScoped<IIdentityService, IdentityServiceFake>();
 builder.Services.AddDbContext<AppDbContext>(options => { options.UseInMemoryDatabase("payment-db"); });
 
+builder.Services.AddAuthenticationAndAuthorizationExt(builder.Configuration);
+
 var app = builder.Build();
 
 app.AddPaymentGroupEndpointExt(app.AddVersionSetExt());
@@ -25,5 +27,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.MapOpenApi();
 }
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();

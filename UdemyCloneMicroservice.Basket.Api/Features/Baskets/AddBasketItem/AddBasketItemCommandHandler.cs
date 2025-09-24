@@ -23,7 +23,7 @@ namespace UdemyCloneMicroservice.Basket.Api.Features.Baskets.AddBasketItem
 
             if (string.IsNullOrEmpty(basketAsJson))
             {
-                currentBasket = new BasketEntity(identityService.GetUserId, [newBasketItem]);
+                currentBasket = new BasketEntity(identityService.UserId, [newBasketItem]);
                 await basketService.CreateBasketCacheAsync(currentBasket, cancellationToken);
                 return ServiceResult.SuccessAsNoContent();
             }
