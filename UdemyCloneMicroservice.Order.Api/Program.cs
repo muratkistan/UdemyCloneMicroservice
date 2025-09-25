@@ -1,15 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using UdemyCloneMicroservice.Bus;
-using UdemyCloneMicroservice.Order.Api;
 using UdemyCloneMicroservice.Order.Api.Endpoints.Orders;
 using UdemyCloneMicroservice.Order.Application;
+using UdemyCloneMicroservice.Order.Application.BackgroundServices;
+using UdemyCloneMicroservice.Order.Application.Contracts.Refit;
 using UdemyCloneMicroservice.Order.Application.Contracts.Repositories;
 using UdemyCloneMicroservice.Order.Application.UnitOfWork;
 using UdemyCloneMicroservice.Order.Persistence;
 using UdemyCloneMicroservice.Order.Persistence.Repositories;
 using UdemyCloneMicroservice.Order.Persistence.UnitOfWork;
 using UdemyCloneMicroservice.Shared.Extensions;
-using UdemyCloneMicroservice.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +41,10 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddVersioningExt();
 
 builder.Services.AddAuthenticationAndAuthorizationExt(builder.Configuration);
+
+builder.Services.AddRefitConfigurationExt(builder.Configuration);
+
+builder.Services.AddHostedService<CheckPaymentStatusOrderBackgroundService>();
 
 var app = builder.Build();
 app.AddOrderGroupEndpointExt(app.AddVersionSetExt());

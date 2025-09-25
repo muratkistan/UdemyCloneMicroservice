@@ -7,9 +7,9 @@ using UdemyCloneMicroservice.Shared.Services;
 namespace UdemyCloneMicroservice.Payment.Api.Feature.Payments.Create
 {
     public class CreatePaymentCommandHandler(AppDbContext appDbContext, IIdentityService identityService, IHttpContextAccessor httpContextAccessor)
-       : IRequestHandler<CreatePaymentCommand, ServiceResult<Guid>>
+       : IRequestHandler<CreatePaymentCommand, ServiceResult<CreatePaymentResponse>>
     {
-        public async Task<ServiceResult<Guid>> Handle(CreatePaymentCommand request, CancellationToken cancellationToken)
+        public async Task<ServiceResult<CreatePaymentResponse>> Handle(CreatePaymentCommand request, CancellationToken cancellationToken)
         {
             var claims = httpContextAccessor.HttpContext?.User.Claims;
 
@@ -23,7 +23,7 @@ namespace UdemyCloneMicroservice.Payment.Api.Feature.Payments.Create
 
             if (!isSuccess)
             {
-                return ServiceResult<Guid>.Error("Payment Failed", errorMessage!, System.Net.HttpStatusCode.BadRequest);
+                return ServiceResult<CreatePaymentResponse>.Error("Payment Failed", errorMessage!, System.Net.HttpStatusCode.BadRequest);
             }
 
             var userId = identityService.UserId;
@@ -33,7 +33,7 @@ namespace UdemyCloneMicroservice.Payment.Api.Feature.Payments.Create
             appDbContext.Payments.Add(newPayment);
             await appDbContext.SaveChangesAsync(cancellationToken);
 
-            return ServiceResult<Guid>.SuccessAsOk(newPayment.Id);
+            return ServiceResult<CreatePaymentResponse>.SuccessAsOk(new CreatePaymentResponse(newPayment.Id, true, null));
         }
 
         private async Task<(bool isSuccess, string? errorMessage)> ExternalPaymentProcessAsync(string cardNumber,

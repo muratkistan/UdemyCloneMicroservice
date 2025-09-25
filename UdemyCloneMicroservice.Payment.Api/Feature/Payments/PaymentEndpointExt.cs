@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning.Builder;
 using UdemyCloneMicroservice.Payment.Api.Feature.Payments.Create;
 using UdemyCloneMicroservice.Payment.Api.Feature.Payments.GetAllPaymentsByUserId;
+using UdemyCloneMicroservice.Payment.Api.Feature.Payments.GetStatus;
 
 namespace UdemyCloneMicroservice.Payment.Api.Feature.Payments
 {
@@ -10,7 +11,8 @@ namespace UdemyCloneMicroservice.Payment.Api.Feature.Payments
         {
             app.MapGroup("api/v{version:apiVersion}/payments").WithTags("payments").WithApiVersionSet(apiVersionSet)
                 .CreatePaymentGroupItemEndpoint()
-            .GetAllPaymentsByUserIdGroupItemEndpoint().RequireAuthorization("Password");
+            .GetAllPaymentsByUserIdGroupItemEndpoint()
+            .GetPaymentStatusGroupItemEndpoint();
         }
     }
 }
